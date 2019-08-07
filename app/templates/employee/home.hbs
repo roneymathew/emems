@@ -1,0 +1,63 @@
+
+<h1>Home</h1>
+<div class="ui form">
+  <div class="field">
+  {{ input value=filter placeholder="search " type="text"}}
+  </div>
+  
+</div>
+<br>
+<br>
+
+{{#list-pagination paginateBy=2 items=filteredItems as |employees|}}
+<div class="ui two cards">
+{{#each employees as |employee|}}
+
+<div class="card">
+	
+<div class="content">
+
+	<div class=" header">
+        {{employee.user.first_name}} {{employee.user.last_name}}
+      </div>
+      <h4 class="ui horizontal divider">
+    {{employee.id}}
+  </h4>
+       
+      
+      <div class="description">
+        {{employee.city}}
+		<br>
+		{{employee.state}}
+		<br>
+		{{employee.pincode}}
+		<br>
+		{{employee.mobile}}
+      </div>
+      </div>
+      <div class="extra content">
+      	
+     
+        {{#link-to 'employee.update' employee}}<div class="ui inverted blue button"><i class="right floated edit icon"></i>Edit</div>{{/link-to}}
+        <div {{action 'delete' employee.id}} class="ui inverted small red button">Delete</div>
+      </div></div>
+    
+  
+  {{/each}}
+   </div>
+
+  {{/list-pagination}}
+
+
+
+{{outlet}}
+
+  
+    
+      
+      
+      
+      
+    
+    
+  

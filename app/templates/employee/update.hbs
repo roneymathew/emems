@@ -1,0 +1,51 @@
+{{outlet}}
+
+<h2 class="ui header">Update here</h2>
+<form class="ui form">
+  <h4 class="ui dividing header">Employee updation</h4>
+  <div class="field">
+    
+    <div class="field">
+        <div class="ui right labeled input">
+    	{{input type="text" class="form-control" value=model.empid placeholder="Employee Id"}}
+    </div>
+    </div>
+    <label>Name</label>
+    <div class="two fields">
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.user.first_name placeholder="First Name"}}
+    	</div>
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.user.last_name placeholder="Last Name"}}
+    	</div>
+    </div>
+    <div class="three fields">
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.housename placeholder="House Name"}}
+    	</div>
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.city placeholder="City"}}
+    	</div>
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.state placeholder="State"}}
+    	</div>
+    </div>
+    <div class="two fields">
+    	<div class="field">
+    		{{input type="number" class="form-control" value=model.pincode placeholder="Pincode"}}
+    	</div>
+    	<div class="field">
+    		{{input type="number" class="form-control" value=model.mobile placeholder="Mobile"}}
+    	</div>
+    </div>
+    <div class="two fields">
+    	
+    	<div class="field">
+    		{{input type="text" class="form-control" value=model.user.email placeholder="Email"}}
+    	</div>
+    </div>
+</div>
+  
+  <button {{action 'updateList' model.id}} class="ui button" >Create</button>
+</form>
+

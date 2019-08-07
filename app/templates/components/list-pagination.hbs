@@ -1,0 +1,26 @@
+{{yield paginatedItems}}
+<br>
+<div class="ui middle aligned center aligned  grid">
+<div class="ui pagination menu">
+  {{#if showPrevious}}
+    <a {{action "previousClicked"}} class="item">{{previousText}}</a>
+  {{else}}
+    <div class="disabled item">{{previousText}}</div>
+  {{/if}}
+  
+  {{#each pageNumbers as |pageNumber|}}
+  {{#if activepage}}
+   <a class="item" {{action "pageClicked" pageNumber}}>{{pageNumber}}</a>
+  {{else}}
+  <a class="active item" {{action "pageClicked" pageNumber}}>{{pageNumber}}</a>
+  {{/if}}
+  {{/each}}
+  {{#if showNext}}
+    <a class="item" {{action "nextClicked"}}>{{nextText}}</a>
+  {{else}}
+   <div class="disabled item">{{nextText}}</div>
+  {{/if}}
+</div>
+</div>
+
+ 

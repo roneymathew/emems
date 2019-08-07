@@ -22,8 +22,36 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  ENV['simple-auth-token']={
+    serverTokenEndpoint:'/login/',
+    authorizer: 'authorizer:custom',
+    tokenDataPropertyName: 'token', // Key in session to store token data
+    refreshAccessTokens: true, // Enables access token refreshing
+    tokenExpirationInvalidateSession: true, // Enables session invalidation on token expiration
+    serverTokenRefreshEndpoint: 'refresh-token/', // Server endpoint to send refresh request
+    refreshTokenPropertyName: 'Bearer', // Key in server response that contains the refresh token
+    //tokenExpireName: 'exp', // Field containing token expiration
+    refreshLeeway: 0 // Amount of time to send refresh request before token expiration
+};
+
+    
+  
+  ENV['ember-simple-auth'] = {  
+    authorizer: 'authorizer:custom',
+    refreshAccessTokens: true,
+    serverTokenRefreshEndpoint: 'refresh-token/',
+    refreshTokenPropertyName: 'Bearer',
+    refreshLeeway: 0, 
+    
+};
+
+  
+  
+  
 
   if (environment === 'development') {
+     ENV.APP.API_HOST = 'http://localhost:8000';
+     ENV.host= 'http://localhost:8000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -44,8 +72,12 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.API_HOST = 'https://api.myproject.com';
+    ENV.APP.API_NAMESPACE = 'v2';
     // here you can enable a production-specific feature
   }
 
+
   return ENV;
 };
+

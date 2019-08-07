@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<div class="ui inverted labeled icon menu">
+  
+  {{#link-to 'employee'}}<a class="item">
+    <i class="home icon"></i>
+   Home
+  </a>{{/link-to}}
+  {{#link-to 'employee.home'}}<a  class="item">
+  	 <i class="address book icon"></i>
+   Search
+  </a>{{/link-to}}
+  {{#link-to 'employee.create'}}<a class="item">
+  	<i class="download icon"></i>
+    Create
+    SingUp
+  </a>{{/link-to}}
+  <div class="right menu">
+    <div class="item">
+      </div>
+      {{#if session.isAuthenticated}}
+      <h2 class="ui blue header">Hi {{session.data.authenticated.user.first_name}}!</h2>
+    <a {{action 'logout'}} class="ui item"><i class="address logout icon"></i>Logout</a>
+  {{else}}
+    {{#link-to 'login'}} <a class="ui item"><i class="address sign-in icon"></i>Login</a>{{/link-to}}
+  {{/if}}
+      
+    
+  </div>
+    </div>
+    <div class="ui container">
+      {{outlet session=session}}
+    </div>

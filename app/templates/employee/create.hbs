@@ -1,0 +1,120 @@
+
+<button id="buttonn"{{action 'adddata'}} class="ui button" >Create</button>
+<button id="buttonn1"{{action 'link'}} class="ui button" >line</button>
+
+<div id="container1" class="features ui container noMargin" style="overflow-y:auto;white-space:nowrap;" >
+    <table >
+{{#if boss}}
+<tr><th >
+    <div id="bossid" class="ui  centered card">
+
+        <div class="content">
+            <div class=" header">
+                {{boss.user.first_name}} {{boss.user.last_name}}
+            </div>
+            <h4 class="ui horizontal divider">
+                {{boss.id}}
+            </h4>
+            <div class="description">
+                {{boss.city}}
+                <br>
+                {{boss.state}}
+                <br>
+                {{boss.pincode}}
+                <br>
+                {{boss.mobile}}
+            </div>
+        </div>
+        <div class="extra content">
+            <div class="ui inverted blue button"><i class="right floated edit icon"></i>Edit</div>
+            <div  class="ui inverted small red button">Delete</div>
+        </div>
+    </div>
+  
+<br></th>
+</tr>
+{{/if}}
+<br>
+
+<tr>
+
+    
+        {{#each sameBoss as |emply|}}
+        <td>
+        <div id={{emply.user.first_name}} class="ui card">
+            <div class="content">
+                <div class=" header">
+                    {{emply.user.first_name}} {{emply.user.last_name}}
+                </div>
+                <h4 class="ui horizontal divider">
+                    {{emply.id}}
+                </h4>
+                <div class="description">
+                    {{emply.city}}
+                    <br>
+                    {{emply.state}}
+                    <br>
+                    {{emply.pincode}}
+                    <br>
+                    {{emply.mobile}}
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="ui inverted blue button"><i class="right floated edit icon"></i>Edit</div>
+                <div  class="ui inverted small red button">Delete</div>
+            </div>
+        </div></td>
+        {{/each}}
+    
+</tr>
+ 
+
+<br>
+<br>
+<tr>
+<div class="ui middle aligned center aligned  grid">
+    <div class="ui six doubling centered cards">
+        {{#each unders as |emply|}}
+        <th>
+        <div class="ui card">
+            <div class="content">
+                <div class=" header">
+                    {{emply.user.first_name}} {{emply.user.last_name}}
+                </div>
+                <h4 class="ui horizontal divider">
+                    {{emply.id}}
+                </h4>
+                <div class="description">
+                    {{emply.city}}
+                    <br>
+                    {{emply.state}}
+                    <br>
+                    {{emply.pincode}}
+                    <br>
+                    {{emply.mobile}}
+                </div>
+            </div>
+            <div class="extra content">
+                <div class="ui inverted blue button"><i class="right floated edit icon"></i>Edit</div>
+                <div  class="ui inverted small red button">Delete</div>
+            </div>
+        </div></th>
+        {{/each}}
+    </div></div></tr>
+        </table>
+  
+</div>
+<script type="text/javascript">
+  
+$( "#container1" ).scroll(function() {
+  $( jsPlumb.repaintEverything() );
+});
+</script>
+<!-- {{#relationship-drawer}}
+  <div style='height: 300px; width: 300px; position: relative'>
+    <div id='block1' style='background-color:red;width:80px;height:100px;top:20px;position:absolute;'>hello</div>
+    <div id='block2' style='background-color:yellow;width:80px;height:100px;position:absolute;top:200px'></div>
+    <div id='block3' style='background-color:blue;width:80px;height:100px;position:absolute;left:200px;top:100px'></div>
+  </div>
+{{/relationship-drawer}} -->
+      

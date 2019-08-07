@@ -1,0 +1,40 @@
+
+<div class="ui middle aligned center aligned  grid" style="margin-top: 150px;">
+	<br>
+	
+
+	<div class="ui massive circular segment">
+
+
+		<form {{action 'signup' on='submit'}} class="ui form"> 
+			
+		
+        <div class="field">
+        	<h4 class="ui dividing large orange header">Log In</h4>
+ 
+  <label for="identification">Username</label>
+  <div class="ui orange massive input">
+  {{input id='identification' type="text" value=identification class="ui small input"}}
+  </div>
+</div>
+  <div class=" field">
+  <label for="password">Password</label>
+  <div class="ui orange massive input">
+  {{input id='password' type="password" value=password1 class="ui large orange input"}}
+</div>
+</div>
+<div class=" field">
+  <label for="password1">Password</label>
+  <div class="ui orange massive input">
+  {{input id='password2' type="password" value=password2 class="ui large orange input"}}
+</div>
+</div>
+  <div class="field">
+  <button type="submit" class="ui fluid massive orange button">Login</button>
+  <br>
+
+</div>
+ </form>
+</div>
+
+</div>

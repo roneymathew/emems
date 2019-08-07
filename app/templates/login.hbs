@@ -1,0 +1,35 @@
+
+<div class="ui middle aligned center aligned  grid" style="margin-top: 0px;">
+	<br>
+	
+
+	<div class="ui massive circular segment">
+		<div class="ui orange  massive circular segment">
+
+		<form {{action 'authenticate' on='submit'}} class="ui form" errorMessage=errorMessage> 
+			
+		
+        <div class="field">
+        	<h4 class="ui dividing large orange header">Log In</h4>
+ 
+  <h2 class="ui orange header">Username</h2>
+  <div class="ui orange massive input">
+  {{input id='identification' type="text" value=identification focusIn=focused class="ui small input"}}
+  </div>
+</div>
+  <div class=" field">
+  <h2 class="ui orange header">Password</h2>
+  <div class="ui orange massive input">
+  {{input id='password' type="password" value=password class="ui large orange input"}}
+</div>
+</div>
+  <div class="field">
+  <button type="submit" class="ui orange button">Login</button>
+  <br>
+
+</div>
+ </form>
+</div>
+</div>
+
+</div>

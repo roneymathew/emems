@@ -6,7 +6,21 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
+
 Router.map(function() {
+  this.route('employee', function() {
+    this.route('home');
+    this.route('create');
+    this.route('update',{path: 'update/:employee_id'});
+  });
+  
+  //this.route('authenticated', { path: '' }, function() {
+  // all routes that require the session to be authenticated
+  //});
+  this.route('task', function() {});
+
+  this.route('login');
+  this.route('signup');
 });
 
 export default Router;

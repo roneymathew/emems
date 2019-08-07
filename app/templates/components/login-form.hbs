@@ -1,0 +1,17 @@
+<h2>Log In</h2>
+<form {{action 'logIn' on='submit'  }} class="ui form">
+    <div  class='ui field'>
+       <label for="">Username</label>
+        {{input value=credentials.identification type='text' placeholder='Username' class="form-control"}}
+    </div>
+    <div class='ui field'>
+       <label for="">Password</label>
+        {{input value=credentials.password type='password' placeholder='Password' class="form-control"}}
+    </div>
+    {{#if errors.non_field_errors}}
+    <div>
+        <strong>Oops!</strong> {{errors.non_field_errors}}
+    </div>
+    {{/if}}
+    {{input class="ui submit button" type="submit" value="Login"}}
+</form>
