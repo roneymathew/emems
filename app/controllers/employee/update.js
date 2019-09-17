@@ -60,6 +60,7 @@ session: Ember.inject.service(),
                self.replaceRoute('employee.home');
            },
         error: function(data) {
+          console.log(data)
           if (data.responseJSON.user.email)
           {
                alert(data.responseJSON.user.email)

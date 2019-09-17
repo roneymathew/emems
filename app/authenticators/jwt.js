@@ -14,6 +14,7 @@ export default Base.extend({
     });
   },
   authenticate(creds) {
+    console.log(creds)
 
     const { identification, password } = creds;
     const data = JSON.stringify({
@@ -23,6 +24,7 @@ export default Base.extend({
     const requestOptions = {
       url: this.tokenEndpoint,
       type: 'POST',
+      crossDomain: true,
       data,
       contentType: 'application/json',
       dataType: 'json',
